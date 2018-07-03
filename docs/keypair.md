@@ -48,6 +48,7 @@ Raw Public Key 是指通过ED25519算法对 raw private key 进行处理生成�
 |   Prefix   | 0xDA 0x37 0x9F                            | 3个字节 |
 |   Version      | 0x01                                      | 1个字节 |
 |   Checksum | 对第2步中得到的字节数组进行两次SHA256运算之后，取运算结果的前4个字节  | 4个字节 |
+
 该表对生成私钥中使用到的Prefix、Version以及Checksum进行了说明。
 ## 生成公钥
 生成公钥需要在生成私钥之后才能实现，需要用到ED25519算法。生成公钥包含以下步骤：
@@ -73,6 +74,7 @@ Raw Public Key 是指通过ED25519算法对 raw private key 进行处理生成�
 |   Prefix   | 0xB0                                      | 1个字节 |
 |   Version      | 0x01                                      | 1个字节 |
 |   Checksum | 对第2步中得到的字节数组进行两次SHA256运算之后，取运算结果的前4个字节  | 4个字节 |
+
 该表对生成公钥中使用到的Prefix、Version以及Checksum进行了说明。
 ## 生成地址
 在生成私钥和公钥后可以进一步通过算法生成地址。生成地址包含以下步骤：
@@ -101,6 +103,7 @@ Raw Public Key 是指通过ED25519算法对 raw private key 进行处理生成�
 |   Version      | 0x01                                      | 1个字节  |
 |   PublicKey| 取raw public key的后20个字节                | 20个字节 |
 |   Checksum | 对第3步中得到的字节数组进行两次SHA256运算之后，取运算结果的前4个字节  | 4个字节  |
+
 该表对生成地址中使用到的Prefix、Version以及Checksum进行了说明。
 ## 交易签名
 借助ED25519算法和私钥对待签名的交易（transaction_blob的反16进制编码得到的字节数组）进行签名，并进行16进制转换，得到签名字符串sign_data。
